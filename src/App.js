@@ -48,7 +48,7 @@ class BooksApp extends React.Component {
               onSearchResult={this.searchBooksByText}
               searchBooks={this.state.searchBooks}
               onUpdateBook={this.updateBook}
-              />
+            />
           )} /> 
         </div>
       </BrowserRouter>
