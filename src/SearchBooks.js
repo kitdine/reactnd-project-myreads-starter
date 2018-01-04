@@ -17,6 +17,7 @@ class SearchBooks extends Component {
                     <Link to='/' className='close-search'>Close</Link>
                     <div className="search-books-input-wrapper">
                         <input 
+                            autoFocus
                             type="text" 
                             placeholder="Search by title or author"
                             onChange={(event) => onSearchResult(event.target.value)}
