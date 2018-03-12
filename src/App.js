@@ -10,7 +10,8 @@ class BooksApp extends React.Component {
     // book list array
     books: [],
     // search page search result book array
-    searchBooks: []
+    searchBooks: [],
+    loading: false
   }
 
   componentDidMount() {
@@ -19,6 +20,9 @@ class BooksApp extends React.Component {
     })
   }
   updateBook = (book, shelf) => {
+    this.setState(state => ({
+      loading: true
+    }))
     BooksAPI.update(book, shelf)
     book.shelf = shelf
     this.setState(state => ({
@@ -41,6 +45,7 @@ class BooksApp extends React.Component {
               <ListBooks 
                 books={this.state.books}
                 onUpdateBook={this.updateBook}
+                loading={this.loading}
               />
           )} />
           <Route path='/search' render={({ history }) => (
